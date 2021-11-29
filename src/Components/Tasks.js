@@ -1,31 +1,12 @@
-const tasks = [
-    {
-        id: 1,
-        text: 'task 1',
-        day: 'Aug 9th at 1:00pm',
-        reminder: true
+import Task from './Task'
 
-    },
-    {
-        id: 2,
-        text: 'task 2',
-        day: 'Aug 9th at 2:00pm',
-        reminder: true
-    },
-    {
-        id: 3,
-        text: 'task 3',
-        day: 'Aug 9th at 3:00pm',
-        reminder: false
-    }
-]
 
-function Tasks() {
+const Tasks = ({ tasks, onDelete, onToggle }) => {
     return (
         <>
           {tasks.map(
               (task) => (
-                    <h3 key={task.id}>{task.text}</h3>
+                    <Task key={task.id} task={task} onDelete={onDelete} onToggle={onToggle}/>
                 )
               )
           }  
@@ -34,3 +15,26 @@ function Tasks() {
 }
 
 export default Tasks
+
+
+// const tasks = [
+//     {
+//         id: 1,
+//         text: 'task 1',
+//         day: 'Aug 9th at 1:00pm',
+//         reminder: true
+
+//     },
+//     {
+//         id: 2,
+//         text: 'task 2',
+//         day: 'Aug 9th at 2:00pm',
+//         reminder: true
+//     },
+//     {
+//         id: 3,
+//         text: 'task 3',
+//         day: 'Aug 9th at 3:00pm',
+//         reminder: false
+//     }
+// ]
